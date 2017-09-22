@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13771056a9114b1ab6fc779a33383047" Name="Diagram1" ZoomLevel="94" >
+        <EntityTypeShape EntityType="EventMatcherModel.Company" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="EventMatcherModel.Event" Width="1.5" PointX="0.5" PointY="3.25" />
+        <EntityTypeShape EntityType="EventMatcherModel.User" Width="1.5" PointX="5.625" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventMatcherModel.Role" Width="1.5" PointX="9.75" PointY="8.125" />
+        <EntityTypeShape EntityType="EventMatcherModel.Buzzword" Width="1.5" PointX="11.5" PointY="5.25" />
+        <EntityTypeShape EntityType="EventMatcherModel.TimeSlot" Width="1.5" PointX="6.25" PointY="0.5" />
+        <EntityTypeShape EntityType="EventMatcherModel.UserSettings" Width="1.5" PointX="8" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventMatcherModel.Logging" Width="1.5" PointX="10.375" PointY="11" />
+        <EntityTypeShape EntityType="EventMatcherModel.Session" Width="1.5" PointX="0.5" PointY="6.875" />
+        <AssociationConnector Association="EventMatcherModel.UserRole" />
+        <AssociationConnector Association="EventMatcherModel.UserUserSettings" />
+        <EntityTypeShape EntityType="EventMatcherModel.Right" Width="1.5" PointX="11.875" PointY="8.375" />
+        <AssociationConnector Association="EventMatcherModel.UserCompany" />
+        <AssociationConnector Association="EventMatcherModel.RightRole" />
+        <AssociationConnector Association="EventMatcherModel.EventUser" />
+        <AssociationConnector Association="EventMatcherModel.BuzzwordUser" />
+        <EntityTypeShape EntityType="EventMatcherModel.Group" Width="1.5" PointX="3.125" PointY="6.5" />
+        <AssociationConnector Association="EventMatcherModel.SessionEvent" />
+        <AssociationConnector Association="EventMatcherModel.SessionGroup" />
+        <AssociationConnector Association="EventMatcherModel.UserGroup" />
+        <AssociationConnector Association="EventMatcherModel.SessionTimeSlot" />
+        <AssociationConnector Association="EventMatcherModel.GroupTimeSlot" />
+        <EntityTypeShape EntityType="EventMatcherModel.Rating" Width="1.5" PointX="9.25" PointY="3.375" />
+        <EntityTypeShape EntityType="EventMatcherModel.DashboardItem" Width="1.5" PointX="8" PointY="9.5" />
+        <AssociationConnector Association="EventMatcherModel.UserSettingsDashboardItem" />
+        <EntityTypeShape EntityType="EventMatcherModel.Status" Width="1.5" PointX="11.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="EventMatcherModel.TimeSlotStatus" />
+        <AssociationConnector Association="EventMatcherModel.UserStatus" />
+        <AssociationConnector Association="EventMatcherModel.CompanyEvent" />
+        <AssociationConnector Association="EventMatcherModel.SessionStatus" />
+        <EntityTypeShape EntityType="EventMatcherModel.UserLogging" Width="1.5" PointX="5.625" PointY="10.5" />
+        <EntityTypeShape EntityType="EventMatcherModel.UserLoginTry" Width="1.5" PointX="8.125" PointY="11.75" />
+        <AssociationConnector Association="EventMatcherModel.UserLoggingUserLoginTry" />
+        <AssociationConnector Association="EventMatcherModel.UserLoggingUser" />
+        <AssociationConnector Association="EventMatcherModel.RatingUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

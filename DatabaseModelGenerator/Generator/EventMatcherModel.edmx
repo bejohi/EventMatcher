@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="EventMatcherModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="EventMatcherModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EventMatcherModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="EventMatcherModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Company" EntityType="EventMatcherModel.Company" />
+          <EntitySet Name="Event" EntityType="EventMatcherModel.Event" />
+          <EntitySet Name="UserSet" EntityType="EventMatcherModel.User" />
+          <EntitySet Name="RoleSet" EntityType="EventMatcherModel.Role" />
+          <EntitySet Name="BuzzwordSet" EntityType="EventMatcherModel.Buzzword" />
+          <EntitySet Name="TimeSlotSet" EntityType="EventMatcherModel.TimeSlot" />
+          <EntitySet Name="UserSettingsSet" EntityType="EventMatcherModel.UserSettings" />
+          <EntitySet Name="LoggingSet" EntityType="EventMatcherModel.Logging" />
+          <EntitySet Name="SessionSet" EntityType="EventMatcherModel.Session" />
+          <AssociationSet Name="UserRole" Association="EventMatcherModel.UserRole">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Role" EntitySet="RoleSet" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserSettings" Association="EventMatcherModel.UserUserSettings">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="UserSettings" EntitySet="UserSettingsSet" />
+          </AssociationSet>
+          <EntitySet Name="RightSet" EntityType="EventMatcherModel.Right" />
+          <AssociationSet Name="UserCompany" Association="EventMatcherModel.UserCompany">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="RightRole" Association="EventMatcherModel.RightRole">
+            <End Role="Right" EntitySet="RightSet" />
+            <End Role="Role" EntitySet="RoleSet" />
+          </AssociationSet>
+          <AssociationSet Name="EventUser" Association="EventMatcherModel.EventUser">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="User" EntitySet="UserSet" />
+          </AssociationSet>
+          <AssociationSet Name="BuzzwordUser" Association="EventMatcherModel.BuzzwordUser">
+            <End Role="Buzzword" EntitySet="BuzzwordSet" />
+            <End Role="User" EntitySet="UserSet" />
+          </AssociationSet>
+          <EntitySet Name="GroupSet" EntityType="EventMatcherModel.Group" />
+          <AssociationSet Name="SessionEvent" Association="EventMatcherModel.SessionEvent">
+            <End Role="Session" EntitySet="SessionSet" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="SessionGroup" Association="EventMatcherModel.SessionGroup">
+            <End Role="Session" EntitySet="SessionSet" />
+            <End Role="Group" EntitySet="GroupSet" />
+          </AssociationSet>
+          <AssociationSet Name="UserGroup" Association="EventMatcherModel.UserGroup">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Group" EntitySet="GroupSet" />
+          </AssociationSet>
+          <AssociationSet Name="SessionTimeSlot" Association="EventMatcherModel.SessionTimeSlot">
+            <End Role="Session" EntitySet="SessionSet" />
+            <End Role="TimeSlot" EntitySet="TimeSlotSet" />
+          </AssociationSet>
+          <AssociationSet Name="GroupTimeSlot" Association="EventMatcherModel.GroupTimeSlot">
+            <End Role="Group" EntitySet="GroupSet" />
+            <End Role="TimeSlot" EntitySet="TimeSlotSet" />
+          </AssociationSet>
+          <EntitySet Name="RatingSet" EntityType="EventMatcherModel.Rating" />
+          <EntitySet Name="DashboardItemSet" EntityType="EventMatcherModel.DashboardItem" />
+          <AssociationSet Name="UserSettingsDashboardItem" Association="EventMatcherModel.UserSettingsDashboardItem">
+            <End Role="UserSettings" EntitySet="UserSettingsSet" />
+            <End Role="DashboardItem" EntitySet="DashboardItemSet" />
+          </AssociationSet>
+          <EntitySet Name="StatusSet" EntityType="EventMatcherModel.Status" />
+          <AssociationSet Name="TimeSlotStatus" Association="EventMatcherModel.TimeSlotStatus">
+            <End Role="TimeSlot" EntitySet="TimeSlotSet" />
+            <End Role="Status" EntitySet="StatusSet" />
+          </AssociationSet>
+          <AssociationSet Name="UserStatus" Association="EventMatcherModel.UserStatus">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Status" EntitySet="StatusSet" />
+          </AssociationSet>
+          <AssociationSet Name="CompanyEvent" Association="EventMatcherModel.CompanyEvent">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="SessionStatus" Association="EventMatcherModel.SessionStatus">
+            <End Role="Session" EntitySet="SessionSet" />
+            <End Role="Status" EntitySet="StatusSet" />
+          </AssociationSet>
+          <EntitySet Name="UserLoggingSet" EntityType="EventMatcherModel.UserLogging" />
+          <EntitySet Name="UserLoginTrySet" EntityType="EventMatcherModel.UserLoginTry" />
+          <AssociationSet Name="UserLoggingUserLoginTry" Association="EventMatcherModel.UserLoggingUserLoginTry">
+            <End Role="UserLogging" EntitySet="UserLoggingSet" />
+            <End Role="UserLoginTry" EntitySet="UserLoginTrySet" />
+          </AssociationSet>
+          <AssociationSet Name="UserLoggingUser" Association="EventMatcherModel.UserLoggingUser">
+            <End Role="UserLogging" EntitySet="UserLoggingSet" />
+            <End Role="User" EntitySet="UserSet" />
+          </AssociationSet>
+          <AssociationSet Name="RatingUser" Association="EventMatcherModel.RatingUser">
+            <End Role="Rating" EntitySet="RatingSet" />
+            <End Role="User" EntitySet="UserSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserCompany" FromRole="Company" ToRole="User" />
+          <NavigationProperty Name="Event" Relationship="EventMatcherModel.CompanyEvent" FromRole="Company" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.EventUser" FromRole="Event" ToRole="User" />
+          <NavigationProperty Name="Session" Relationship="EventMatcherModel.SessionEvent" FromRole="Event" ToRole="Session" />
+          <NavigationProperty Name="Company" Relationship="EventMatcherModel.CompanyEvent" FromRole="Event" ToRole="Company" />
+          <Property Name="CompanyId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Role" Relationship="EventMatcherModel.UserRole" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="UserSettings" Relationship="EventMatcherModel.UserUserSettings" FromRole="User" ToRole="UserSettings" />
+          <NavigationProperty Name="Company" Relationship="EventMatcherModel.UserCompany" FromRole="User" ToRole="Company" />
+          <NavigationProperty Name="Event" Relationship="EventMatcherModel.EventUser" FromRole="User" ToRole="Event" />
+          <NavigationProperty Name="Buzzword" Relationship="EventMatcherModel.BuzzwordUser" FromRole="User" ToRole="Buzzword" />
+          <NavigationProperty Name="Group" Relationship="EventMatcherModel.UserGroup" FromRole="User" ToRole="Group" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="EMail" Type="String" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="true" />
+          <Property Name="LastName" Type="String" Nullable="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="EventMatcherModel.UserStatus" FromRole="User" ToRole="Status" />
+          <NavigationProperty Name="UserLogging" Relationship="EventMatcherModel.UserLoggingUser" FromRole="User" ToRole="UserLogging" />
+          <NavigationProperty Name="Rating" Relationship="EventMatcherModel.RatingUser" FromRole="User" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserRole" FromRole="Role" ToRole="User" />
+          <NavigationProperty Name="Right" Relationship="EventMatcherModel.RightRole" FromRole="Role" ToRole="Right" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Buzzword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.BuzzwordUser" FromRole="Buzzword" ToRole="User" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeSlot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Session" Relationship="EventMatcherModel.SessionTimeSlot" FromRole="TimeSlot" ToRole="Session" />
+          <NavigationProperty Name="Group" Relationship="EventMatcherModel.GroupTimeSlot" FromRole="TimeSlot" ToRole="Group" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="EventMatcherModel.TimeSlotStatus" FromRole="TimeSlot" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="UserSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserUserSettings" FromRole="UserSettings" ToRole="User" />
+          <NavigationProperty Name="DashboardItem" Relationship="EventMatcherModel.UserSettingsDashboardItem" FromRole="UserSettings" ToRole="DashboardItem" />
+          <Property Name="EMailNotification" Type="Boolean" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Logging">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="TimeOfEvent" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Event" Relationship="EventMatcherModel.SessionEvent" FromRole="Session" ToRole="Event" />
+          <NavigationProperty Name="Group" Relationship="EventMatcherModel.SessionGroup" FromRole="Session" ToRole="Group" />
+          <NavigationProperty Name="TimeSlot" Relationship="EventMatcherModel.SessionTimeSlot" FromRole="Session" ToRole="TimeSlot" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <NavigationProperty Name="Status" Relationship="EventMatcherModel.SessionStatus" FromRole="Session" ToRole="Status" />
+        </EntityType>
+        <Association Name="UserRole">
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+          <End Type="EventMatcherModel.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <Association Name="UserUserSettings">
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="1" />
+          <End Type="EventMatcherModel.UserSettings" Role="UserSettings" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Right">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Role" Relationship="EventMatcherModel.RightRole" FromRole="Right" ToRole="Role" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="UserCompany">
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+          <End Type="EventMatcherModel.Company" Role="Company" Multiplicity="*" />
+        </Association>
+        <Association Name="RightRole">
+          <End Type="EventMatcherModel.Right" Role="Right" Multiplicity="*" />
+          <End Type="EventMatcherModel.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <Association Name="EventUser">
+          <End Type="EventMatcherModel.Event" Role="Event" Multiplicity="*" />
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <Association Name="BuzzwordUser">
+          <End Type="EventMatcherModel.Buzzword" Role="Buzzword" Multiplicity="*" />
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Session" Relationship="EventMatcherModel.SessionGroup" FromRole="Group" ToRole="Session" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserGroup" FromRole="Group" ToRole="User" />
+          <NavigationProperty Name="TimeSlot" Relationship="EventMatcherModel.GroupTimeSlot" FromRole="Group" ToRole="TimeSlot" />
+          <Property Name="Name" Type="String" Nullable="true" />
+        </EntityType>
+        <Association Name="SessionEvent">
+          <End Type="EventMatcherModel.Session" Role="Session" Multiplicity="*" />
+          <End Type="EventMatcherModel.Event" Role="Event" Multiplicity="1" />
+        </Association>
+        <Association Name="SessionGroup">
+          <End Type="EventMatcherModel.Session" Role="Session" Multiplicity="*" />
+          <End Type="EventMatcherModel.Group" Role="Group" Multiplicity="*" />
+        </Association>
+        <Association Name="UserGroup">
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+          <End Type="EventMatcherModel.Group" Role="Group" Multiplicity="*" />
+        </Association>
+        <Association Name="SessionTimeSlot">
+          <End Type="EventMatcherModel.Session" Role="Session" Multiplicity="*" />
+          <End Type="EventMatcherModel.TimeSlot" Role="TimeSlot" Multiplicity="*" />
+        </Association>
+        <Association Name="GroupTimeSlot">
+          <End Type="EventMatcherModel.Group" Role="Group" Multiplicity="*" />
+          <End Type="EventMatcherModel.TimeSlot" Role="TimeSlot" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Time" Type="DateTime" Nullable="true" />
+          <Property Name="Points" Type="Int32" Nullable="true" />
+          <Property Name="Comment" Type="String" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.RatingUser" FromRole="Rating" ToRole="User" />
+        </EntityType>
+        <EntityType Name="DashboardItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserSettings" Relationship="EventMatcherModel.UserSettingsDashboardItem" FromRole="DashboardItem" ToRole="UserSettings" />
+          <Property Name="Name" Type="String" Nullable="true" />
+        </EntityType>
+        <Association Name="UserSettingsDashboardItem">
+          <End Type="EventMatcherModel.UserSettings" Role="UserSettings" Multiplicity="*" />
+          <End Type="EventMatcherModel.DashboardItem" Role="DashboardItem" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TimeSlot" Relationship="EventMatcherModel.TimeSlotStatus" FromRole="Status" ToRole="TimeSlot" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserStatus" FromRole="Status" ToRole="User" />
+          <NavigationProperty Name="Session" Relationship="EventMatcherModel.SessionStatus" FromRole="Status" ToRole="Session" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="TimeSlotStatus">
+          <End Type="EventMatcherModel.TimeSlot" Role="TimeSlot" Multiplicity="*" />
+          <End Type="EventMatcherModel.Status" Role="Status" Multiplicity="*" />
+        </Association>
+        <Association Name="UserStatus">
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="*" />
+          <End Type="EventMatcherModel.Status" Role="Status" Multiplicity="*" />
+        </Association>
+        <Association Name="CompanyEvent">
+          <End Type="EventMatcherModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="EventMatcherModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SessionStatus">
+          <End Type="EventMatcherModel.Session" Role="Session" Multiplicity="*" />
+          <End Type="EventMatcherModel.Status" Role="Status" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UserLogging">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserLoginTry" Relationship="EventMatcherModel.UserLoggingUserLoginTry" FromRole="UserLogging" ToRole="UserLoginTry" />
+          <NavigationProperty Name="User" Relationship="EventMatcherModel.UserLoggingUser" FromRole="UserLogging" ToRole="User" />
+          <Property Name="EMailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="Blocked" Type="Boolean" Nullable="true" />
+          <Property Name="TimeOfCreation" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLoginTry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserLogging" Relationship="EventMatcherModel.UserLoggingUserLoginTry" FromRole="UserLoginTry" ToRole="UserLogging" />
+          <Property Name="UserLoggingId" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" />
+          <Property Name="Succeded" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="UserLoggingUserLoginTry">
+          <End Type="EventMatcherModel.UserLogging" Role="UserLogging" Multiplicity="1" />
+          <End Type="EventMatcherModel.UserLoginTry" Role="UserLoginTry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLogging">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserLoginTry">
+              <PropertyRef Name="UserLoggingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserLoggingUser">
+          <End Type="EventMatcherModel.UserLogging" Role="UserLogging" Multiplicity="1" />
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="1" />
+        </Association>
+        <Association Name="RatingUser">
+          <End Type="EventMatcherModel.Rating" Role="Rating" Multiplicity="*" />
+          <End Type="EventMatcherModel.User" Role="User" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="EventMatcherModel" />
+        <Alias Key="Target" Value="EventMatcherModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="EventMatcherModelContainer" StorageEntityContainer="EventMatcherModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
