@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Layer", "Data Layer", "{E2276270-4FFE-45C6-B025-2813DEAD2107}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{8E2B0A18-CAB3-4621-9C97-1BA7819E968B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{123A6051-D69A-4799-ABEB-D58934E69BF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModel", "DataLayer\DatabaseModel\DatabaseModel.csproj", "{473C44B9-B169-4D9D-989C-E3BF6BD0FC35}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{6B01B989-E609-4392-A03B-B65B8884D2C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseModelGenerator", "DataLayer\DatabaseModelGenerator\DatabaseModelGenerator.csproj", "{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseModelGenerator", "DatabaseModelGenerator\DatabaseModelGenerator.csproj", "{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepositories", "DataLayer\RepositoryAccessors\DataRepositories.csproj", "{078593F8-550A-456E-A9F8-56A1A863AD13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModel", "DatabaseModel\DatabaseModel.csproj", "{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{ED455E0D-7B4A-45E8-879D-4CB55870D6AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepositories", "RepositoryAccessors\DataRepositories.csproj", "{DB956763-207A-4B82-8AC9-6F917F7C9839}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{C0A4D2FB-3A05-47E2-90AF-77EB7BC5F38B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F849743A-36F0-427B-A8A6-1CBA1C94C508}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,26 +23,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{473C44B9-B169-4D9D-989C-E3BF6BD0FC35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473C44B9-B169-4D9D-989C-E3BF6BD0FC35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473C44B9-B169-4D9D-989C-E3BF6BD0FC35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473C44B9-B169-4D9D-989C-E3BF6BD0FC35}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB956763-207A-4B82-8AC9-6F917F7C9839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB956763-207A-4B82-8AC9-6F917F7C9839}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB956763-207A-4B82-8AC9-6F917F7C9839}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB956763-207A-4B82-8AC9-6F917F7C9839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078593F8-550A-456E-A9F8-56A1A863AD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078593F8-550A-456E-A9F8-56A1A863AD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078593F8-550A-456E-A9F8-56A1A863AD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078593F8-550A-456E-A9F8-56A1A863AD13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9} = {E2276270-4FFE-45C6-B025-2813DEAD2107}
-		{EB3BB647-9902-4096-ABD0-D4DFBA2B2CFE} = {E2276270-4FFE-45C6-B025-2813DEAD2107}
-		{DB956763-207A-4B82-8AC9-6F917F7C9839} = {E2276270-4FFE-45C6-B025-2813DEAD2107}
+		{473C44B9-B169-4D9D-989C-E3BF6BD0FC35} = {8E2B0A18-CAB3-4621-9C97-1BA7819E968B}
+		{20F8F4AC-7DF6-4130-BAF4-E9BE944CB9A9} = {8E2B0A18-CAB3-4621-9C97-1BA7819E968B}
+		{078593F8-550A-456E-A9F8-56A1A863AD13} = {8E2B0A18-CAB3-4621-9C97-1BA7819E968B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA57C2AA-E242-4892-A583-EE56CD2AEF28}
