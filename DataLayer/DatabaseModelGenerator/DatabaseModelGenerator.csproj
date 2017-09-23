@@ -109,6 +109,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EventMatcherModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IdentityGenerator\IdentityModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,5 +124,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,2 @@
+Run cmd: SqlLocalDB.exe start
+Connect to: (localdb)\MSSQLLocalDB
